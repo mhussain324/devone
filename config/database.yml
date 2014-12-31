@@ -5,21 +5,30 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
-  pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  adapter: mysql2
+  database: devone
+  pool: 5
+  username: root
+  password: amir
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  adapter: mysql2
+  database: devone_test
+  pool: 5
+  username: root
+  password: amir
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: pg
+  username: xjixcsilcbuyxl
+  password: 8lmV3M7hTDV2N-6hPLZ9zlt0_l
+  database: d7nqjbi2a9n88b
